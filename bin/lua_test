@@ -1,0 +1,31 @@
+#!/usr/bin/env ruby
+require 'rlua'
+
+state = Lua::State.new   # create Lua interpreter
+state.__load_stdlib :all # load some standard libraries in it
+state.__eval "print('hello, world')" # launch some Lua code
+
+state.value = 10            # set a variable in Ruby
+state.__eval "print(value)" # show it's value from Lua
+
+state.__eval "value = 15"   # set a variable in Lua
+p state.value               # show it's value from Ruby
+
+# create a function in Lua
+state.__eval "function lua_func() print('hello from Lua') end"
+# launch it from Ruby
+state.lua_func
+
+# create a table in Ruby and method in it
+state.ruby = {
+  'meaning_of_life' => 42,
+    'zaphod' => lambda { |this|
+    p "Meaning of life: #{this.meaning_of_life}"
+  }
+}
+# launch that from Lua as instance method
+state.__eval "ruby:zaphod()"
+
+p state.__eval "return 100"
+
+

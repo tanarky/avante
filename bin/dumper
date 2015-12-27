@@ -1,0 +1,20 @@
+#!/usr/bin/env ruby
+
+require 'redis'
+require 'hiredis'
+require 'optparse'
+require 'json'
+require 'rlua'
+state = Lua::State.new
+state.__load_stdlib :all
+
+redis = Redis.new(:path => "/tmp/redis.sock", :driver => :hiredis)
+redis.keys.each do |k|
+  val = JSON.parse(redis.get k)
+  f = state.__eval(val['targeting'])
+  if f.call('hoge')
+    puts "key=#{k}, ecpm=#{state.__eval(val['ecpm'])}"
+  end
+end
+
+

@@ -1,0 +1,20 @@
+{
+    "p1":{
+        "targeting":"return function(...) local a = ...; print(a); return true; end",
+        "ecpm": "return 1000",
+        "start":1,
+        "end":1951225755
+    },
+    "p2":{
+        "targeting":"return function(...) return true; end",
+        "ecpm": "return 2000",
+        "start":1,
+        "end":1951225755
+    },
+    "p999":{
+        "targeting":"return function(...) return true; end",
+        "ecpm": "return 100",
+        "start":1,
+        "end":1951225755
+    }
+}

@@ -1,0 +1,19 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    hiredis (0.6.0)
+    redis (3.2.2)
+    rlua (1.0)
+    ruby-lua (0.4.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  hiredis
+  redis
+  rlua
+  ruby-lua
+
+BUNDLED WITH
+   1.10.6
