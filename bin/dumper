@@ -9,7 +9,7 @@ state = Lua::State.new
 state.__load_stdlib :all
 
 redis = Redis.new(:path => "/tmp/redis.sock", :driver => :hiredis)
-redis.keys.each do |k|
+redis.keys('p*').each do |k|
   val = JSON.parse(redis.get k)
   f = state.__eval(val['targeting'])
   if f.call('hoge')
