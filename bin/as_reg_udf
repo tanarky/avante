@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'aerospike'
+
+client = Aerospike::Client.new('192.168.50.10', 3000)
+task = client.register_udf_from_file("lua/my_udfs.lua",
+                                     "my_udfs.lua",
+                                     Aerospike::Language::LUA,
+                                     {})
+task.wait_till_completed
+puts 'register completed successfully'

@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'aerospike'
+
+include Aerospike
+
+client = Client.new('192.168.50.10', 3000)
+
+#             namespace, set, key
+key = Key.new('test', 'test', 'key value')
+result = client.execute_udf(key,
+                            "my_udfs",
+                            "get_bin_with_expire",
+                            ["bin1", Time.now.to_i])
+puts result
+
+record = client.get(key)
+puts record.bins
+
+client.close
