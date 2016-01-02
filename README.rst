@@ -19,10 +19,10 @@ components
 -------------------------
 
 :$NAME-user-store: aerospike ?
-:$NAME-ad-models: redisとそれを操作する配信用ad models
-:$NAME-ad-api: sinatora + unicorn, needs ad-models
-:$NAME-ad-q-client: , needs ad-models
-:$NAME-ad-q-server: , needs ad-models
+:$NAME-models: redisとそれを操作する配信用models
+:$NAME-api: sinatora + unicorn, needs models
+:$NAME-q-client: , needs models
+:$NAME-q-server: , needs models
 
 
 案件のコントロールと配信最適化コントロールは別コンポーネントか？
