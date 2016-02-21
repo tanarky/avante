@@ -12,3 +12,4 @@ gem 'sugar_models', :git => 'git@github.com:tanarky/sugar_models.git'
 gem 'test_gem', :git => 'git@github.com:morizyun/test_gem.git'
 
 gem 'rake'
+gem 'msgpack'

@@ -3,6 +3,24 @@ avante
 
 $NAME = avante
 
+todo
+-------------------------
+
+- config environment
+- lua logging
+- user data sample
+- creative data sample
+- lock ?
+- ターゲティングもload_scriptしておく？
+
+log
+-------------------------
+
+- 結局、全部redisでやる
+
+  - aerospikeにはUDF内で他のkeyを参照できないから
+  - scanでpriority=highにして同期処理にしてもいいが、怖いので却下
+
 setup
 -------------------------
 
@@ -26,3 +44,4 @@ components
 
 
 案件のコントロールと配信最適化コントロールは別コンポーネントか？
+
