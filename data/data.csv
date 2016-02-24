@@ -1,0 +1,2 @@
+#c_id, f_id, f_start, f_end, f_budget, f_spent, p_id, u_id, u_condition, u_ecpm, cs_id, fa_id, a_id
+1, 1, 1456326000, 1456930800, 10000, 1000, 1, 1, "return true", "return 2000", 1, 1, 1
